@@ -1,13 +1,13 @@
 
 import './App.css'
+import Navbar from './components/Navbar'
 
 function App() {
-
-
+  
   return (
-    <>
-      <h1 className='bg-red-800 text-4xl'>Hello how are you</h1>
-    </>
+    <div className=' min-h-screen min-w-screen overflow-hidden bg-[#F8FAFD]'>
+    <Navbar/>
+    </div>
   )
 }
 
