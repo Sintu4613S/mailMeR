@@ -9,8 +9,7 @@ const Message = () => {
     navigate("/mail/23y98uu23091")
    }
   return (
-    <div onClick={openMail
-    }
+    <div onClick={openMail}
     className='flex items-center py-2.5 px-4 border-b-2 border-b-gray-200 hover:cursor-pointer hover:shadow-md'>
       <div className='flex items-center gap-3'>
         <div className=' text-gray-500'>
