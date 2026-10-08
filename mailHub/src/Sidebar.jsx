@@ -9,23 +9,25 @@ import {
   LuPencil,
 } from 'react-icons/lu';
 import { FaPlus } from 'react-icons/fa6';
+import { useDispatch } from 'react-redux';
+import { setOpen } from './components/redux/appSlice';
 
+const sideItems = [
+  { text: 'Inbox', icon: LuInbox, active: true },
+  { text: 'Starred', icon: LuStar },
+  { text: 'Snoozed', icon: LuClock },
+  { text: 'Sent', icon: LuSend },
+  { text: 'Draft', icon: MdOutlineDrafts },
+  { text: 'Purchase', icon: LuShoppingBag },
+  { text: 'More', icon: MdOutlineExpandMore },
+];
 
 const Sidebar = () => {
-
-  const sideItems = [
-    { text: 'Inbox', icon: LuInbox, active: true },
-    { text: 'Starred', icon: LuStar },
-    { text: 'Snoozed', icon: LuClock },
-    { text: 'Sent', icon: LuSend },
-    { text: 'Draft', icon: MdOutlineDrafts },
-    { text: 'Purchase', icon: LuShoppingBag },
-    { text: 'More', icon: MdOutlineExpandMore },
-  ];
+   const dispatch = useDispatch();
   return (
     <div className='w-[15%]'>
       <div className='p-3 '>
-        <button className='bg-[#C2E7FF] flex gap-2 text-center p-4 rounded-2xl hover:shadow-md cursor-pointer'>
+        <button onClick={()=>dispatch(setOpen(true))} className='bg-[#C2E7FF] flex gap-2 text-center p-4 rounded-2xl hover:shadow-md cursor-pointer'>
           <LuPencil size={20} />
           Compose
         </button>
@@ -51,11 +53,11 @@ const Sidebar = () => {
         </ul>
       </div>
       <div className='mt-4'>
-      <div className='flex justify-between px-4 items-center'>
-        <h1 className='font-medium'>Labels</h1>
-        <span className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-200 cursor-pointer transition-all duration-300 ease-in-out">
-  <FaPlus size={20} />
-</span>
+        <div className='flex justify-between px-4 items-center'>
+          <h1 className='font-medium'>Labels</h1>
+          <span className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-200 cursor-pointer transition-all duration-300 ease-in-out">
+            <FaPlus size={20} />
+          </span>
 
         </div>
       </div>
